@@ -1,7 +1,7 @@
 const express=require("express")
 const postRoutes=require("./routes/postRoutes")
 const userRoutes=require("./routes/userRoutes")
-require("./config/dbConnect")
+const connectDb=require("./config/dbConnect")
 const app=express()
 const verifyToken=require("./middleware/authMiddleWare")
 
@@ -18,7 +18,10 @@ app.use("/api/post",verifyToken,postRoutes)
 
 app.use("/api/auth",userRoutes)
 
-
+// changed as we want to deploy on cyclic which is serverless platform as per there api
+connectDb().then(()=>{
 app.listen(port,()=>{
     console.log("Server status: 200")
+})
+
 })
