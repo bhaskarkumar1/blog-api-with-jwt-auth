@@ -18,7 +18,6 @@ app.use("/api/post",verifyToken,postRoutes)
 
 app.use("/api/auth",userRoutes)
 
-// changed as we want to deploy on cyclic which is serverless platform as per there api
 
 app.listen(port,()=>{
     console.log("Server status: 200")

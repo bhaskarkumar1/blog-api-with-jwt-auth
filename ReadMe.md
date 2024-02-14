@@ -1,0 +1,1 @@
+The Documentation for API is well documented in the Given website: https://documenter.getpostman.com/view/24875086/2sA2r5566a
